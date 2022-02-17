@@ -1,0 +1,40 @@
+#
+# IMPORTANT NOTE
+#
+# This chart inherits from our common library chart. You can check the default values/options here:
+# https://github.com/k8s-at-home/library-charts/tree/main/charts/stable/common/values.yaml
+#
+
+image:
+  # -- image repository
+  repository: m1k1o/neko
+  # -- image tag
+  tag: firefox
+  # -- image pull policy
+  pullPolicy: IfNotPresent
+
+env:
+  NEKO_SCREEN: 1920x1080@30
+  NEKO_PASSWORD: neko
+  ADMIN_PASSWORD: admin
+  NEKO_EPR: 52000-52100
+  NEKO_NAT1TO1: 192.186.1.74
+
+# -- Configures service settings for the chart.
+# @default -- See values.yaml
+service:
+  main:
+    ports:
+      http:
+        port: 8080
+
+udpservice:
+  type: LoadBalancer
+  annotations: {}
+    
+
+ingress:
+  # -- Enable and configure ingress settings for the chart under this key.
+  # @default -- See values.yaml
+  main:
+    enabled: false

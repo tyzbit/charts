@@ -1,0 +1,24 @@
+apiVersion: v2
+appVersion: firefox
+description: Neko is an app for hosting a room with a shared, streamed browser
+name: neko
+version: 1.0.0
+kubeVersion: ">=1.16.0-0"
+keywords:
+  - neko
+  - rabb.it
+home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/neko
+icon: https://raw.githubusercontent.com/m1k1o/neko/master/docs/_media/logo.png
+sources:
+  - https://neko.m1k1o.net/
+maintainers:
+  - name: tyzbit
+    email: tyzbit@gmail.com
+dependencies:
+  - name: common
+    repository: https://library-charts.k8s-at-home.com
+    version: 4.3.0
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Added initial chart
